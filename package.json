@@ -1,0 +1,25 @@
+{
+  "name": "new-folder-(4)",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mongodb.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alcamara/SF2_database_mongo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alcamara/SF2_database_mongo/issues"
+  },
+  "homepage": "https://github.com/Alcamara/SF2_database_mongo#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "jest": "^29.1.2",
+    "mongoose": "^6.6.4"
+  }
+}
