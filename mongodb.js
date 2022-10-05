@@ -9,7 +9,7 @@ connect =() =>{
 const sfCharacter = new mongoose.Schema({
     name: {
         type: String,
-        require: true
+        required: true
     },
     age:Number,
     country: String,
@@ -20,3 +20,33 @@ const sfCharacter = new mongoose.Schema({
     specialMoves:[{type:String}]
     
 })
+
+const SfCharacter = mongoose.model('sfCharacter', sfCharacter)
+
+
+connect()
+ .then( async connect =>{
+
+    // const newCharacter = await SfCharacter.create({
+    //     name:'Balrog',
+    //     age: 45,
+    //     country:'USA',
+    //     martialArts:'Boxing',
+    //     specialMoves: ['Drive Punch','Giga Punch']
+    // })
+
+    // console.log(newCharacter);
+
+    const allCharacter = await SfCharacter.find({});
+
+    console.log(allCharacter);
+
+    // const del = await SfCharacter.deleteOne({_id: "633d32a7bf9c2a13e672f488" });
+    // console.log(del);
+
+    // console.log(allCharacter);
+
+ })
+    .catch(err =>{
+        console.error(`${err}`);
+    })
