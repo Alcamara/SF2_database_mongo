@@ -28,11 +28,11 @@ connect()
  .then( async connect =>{
 
     const newCharacter = await SfCharacter.create({
-        name:'Balrog',
-        age: 45,
-        country:'USA',
-        martialArts:'Boxing',
-        specialMoves: ['Drive Punch','Giga Punch']
+        name:'Ryu',
+        age: 50,
+        country:'Japan',
+        martialArts:'Karate',
+        specialMoves: ['Hadoken','Shoruyken']
     })
 
     console.log(newCharacter);
