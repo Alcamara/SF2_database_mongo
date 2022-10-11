@@ -27,21 +27,21 @@ const SfCharacter = mongoose.model('sfCharacter', sfCharacter)
 connect()
  .then( async connect =>{
 
-    const newCharacter = await SfCharacter.create({
-        name:'Ryu',
-        age: 50,
-        country:'Japan',
-        martialArts:'Karate',
-        specialMoves: ['Hadoken','Shoruyken']
-    })
+    // const newCharacter = await SfCharacter.create({
+    //     name:'Ken Master',
+    //     age: 52,
+    //     country:'USA',
+    //     martialArts:'Karate',
+    //     specialMoves: ['Hadoken','Tasumaki Senpu-kyaju']
+    // })
 
-    console.log(newCharacter);
+    // console.log(newCharacter);
 
     // const allCharacter = await SfCharacter.find({});
 
-    // console.log(allCharacter);
+    // console.log('before' ,allCharacter);
 
-    // const del = await SfCharacter.deleteOne({_id: "633d32a7bf9c2a13e672f488" });
+    // const del = await SfCharacter.deleteOne({_id: "6344db5b65bcfd58c19e8fdd" });
     // console.log(del);
 
     // console.log(allCharacter);
@@ -50,7 +50,19 @@ connect()
 
     // console.log('Characters from the US', usCharacters);
 
+    // const charUpdate = await SfCharacter.findByIdAndUpdate("6344d1fe4c03d9e097f7cde5",{name: 'Ed'}, {new: true}).exec()
+
+    // console.log(charUpdate);
+
+    const upCharacter = await SfCharacter.find({});
+
+    console.log('after',upCharacter);
+
+    // const delChar = await SfCharacter.findByIdAndRemove('6344ee4a02b3887768ee28c7').exec()
+
+    // console.log(delChar);
+
  })
     .catch(err =>{
-        console.error(`${err}`);
+        console.error(err);
     })
