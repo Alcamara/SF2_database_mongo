@@ -56,7 +56,17 @@ connect()
 
     const upCharacter = await SfCharacter.find({});
 
-    console.log('after',upCharacter);
+    const sfCharList = []
+
+    for (let char of upCharacter) {
+        console.log('Next Character: ',char);
+
+        sfCharList.push(char._id)
+    }
+
+    console.log(sfCharList);
+
+
 
     // const delChar = await SfCharacter.findByIdAndRemove('6344ee4a02b3887768ee28c7').exec()
 
