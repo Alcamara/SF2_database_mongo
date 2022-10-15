@@ -11,9 +11,17 @@ const sf6Character = new mongoose.Schema({
         type:String,
         required: true,
     },
-    specialMoves:[{type:String}]
+    specialMoves:[{type:String}],
+
+    gameFirstApprearedIn: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'title',
+        required: true
+    }
     
 })
 
-module.exports = mongoose.model('SF6Characters',sf6Character)
+
+
+module.exports = mongoose.model('SF6Characters',sf6Character);
 

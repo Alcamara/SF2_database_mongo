@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 const  {
 
     addCharacter,
-    getAddCharacters
+    getAddCharacters,
+    addSFTitle,
+    removeChar
 
 } = require('./SF6Characters/SF6Queries')
 
@@ -18,12 +20,17 @@ const connect = () => {
 connect()
   .then(async ()=>{
 
-    // const newCharacter1 = await addCharacter('Kimberly', 20,'USA', 'Bushin-ryu Ninjutsu', ['Vagabond Edge','Bushin Senpukyaku']).exec();
-    // console.log(newCharacter1);
+    const title = await addSFTitle('Street Fighter 6');
 
-    const allCharacter = await getAddCharacters()
+    const newCharacter1 = await addCharacter('Mimi', 30 ,'France', 'MMA', ['tackle','choke hold'], title._id );
+    console.log(newCharacter1);
 
-    console.log(allCharacter);
+    // const allCharacter = await getAddCharacters()
+    // console.log(allCharacter);
+
+    // const delectedChar = await removeChar('634ab156b337fb5cee082def')
+
+    // console.log(delectedChar);
 
   })
   .catch(e =>{
